@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Repeat Basic Example</title>
+    <style>
+.calc-screen{
+    display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+    }
+    .calc-but{
+        display: grid;
+        grid-template-columns: repeat(4, 50px);
+        grid-template-rows: repeat(4, 50px);
+        gap: 5px;
+    }
+    </style>
+</head>
+<body>
+
+  <div>
+    <div>
+      <div class="calc-screen" id="calc-screen">
+      <div><textarea name="" id=""></textarea></div><div><button>Clr</button></div></div>
+      <div class="calc-but" id="calc-but"></div>
+    </div>
+  </div>
+  <script>
+      
+      let name =["1","2","3","+","4","5","6","-","7","8","9","*","0","=","." ,"/"];
+      const age = 25;
+      var shii = "shiiiiii";
+      console.log(name, age, shii);
+      const buttdiv = document.getElementById("calc-but");
+      name.forEach(items => {
+          const button = document.createElement("button");
+          button.innerText = items;
+          buttdiv.appendChild(button);
+      });
+      onclick
+  </script>
+</body>
+</html>
