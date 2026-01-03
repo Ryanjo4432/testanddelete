@@ -27,7 +27,7 @@
   <div class="over-cont">
     <div>
       <div class="calc-screen" id="calc-screen">
-      <div><textarea name="" id=""></textarea></div><div><button>Clr</button></div></div>
+      <div><textarea name="" id="" disabled></textarea></div><div><button>Clr</button></div></div>
       <div class="calc-but" id="calc-but"></div>
     </div>
   </div>
@@ -47,7 +47,20 @@
       document.addEventListener("click",function(event){
         const buttonnn =event.target.closest("button");
         if(buttonnn){
-          alert(buttonnn.innerText);
+          if(buttonnn.innerText === "Clr"){
+            const textarea = document.querySelector("textarea");
+            textarea.value = "";
+
+        } else if(buttonnn.innerText === "="){
+          const textarea = document.querySelector("textarea");
+        try{
+          textarea.value = eval(textarea.value);}
+        catch(err){
+          textarea.value = "Error";}
+        } else{
+          const textarea = document.querySelector("textarea");
+          textarea.value += buttonnn.innerText;
+        }
         }
       })
   </script>
